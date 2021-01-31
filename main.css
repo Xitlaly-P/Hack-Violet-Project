@@ -21,14 +21,13 @@ body {
 .rightside{
   width: 60%;
   float: right;
-  padding-left: 10px;
 }
 
 input[type="text"] {
   margin: 8px 0;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 20px;
+  border-radius: 18px;
   box-sizing: border-box;
   padding: 5px;
 }
