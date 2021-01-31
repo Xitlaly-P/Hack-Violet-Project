@@ -3,6 +3,7 @@ body {
   }
 
 .mainbox{
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #F5F3F3;
     vertical-align: middle;
     align-self: center;
