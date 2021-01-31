@@ -1,9 +1,10 @@
-var booktitles=["Sorcery of Thorns", "Aurora Rising", "Illuminiae", "The Maze Runner", "Red Queen"]
-var wordcount=[121424, 139077, 92520, 116656]
-var cover=["2wCEAAkGBxMTEhUSExMVFRUXGBgXGRgYGBgYGxofHRgdHRoZGhgdHSggGBolHRgXIjEiJSkrLi4uFyAzODMtNygtLisBCgoKDg0OGxAQGy8mICUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf", "https://images-na.ssl-images-amazon.com/images/I/81DOo37t7UL.jpg%22,%22https://images-na.ssl-images-amazon.com/images/I/51UU0FLH1wL._SX330_BO1,204,203,200_.jpg%22,%22https://m.media-amazon.com/images/I/41LHCOh0eBL.jpg"]
+var booktitles=["Sorcery of Thorns", "Aurora Rising", "Illuminae", "The Maze Runner", "Red Queen"]
+var wordcount=[121424, 139077, 174950, 92520, 116656]
+var cover=["https://m.media-amazon.com/images/I/51geWHDf9JL.jpg", "https://images-na.ssl-images-amazon.com/images/I/81DOo37t7UL.jpg","https://img.chirpbooks.com/image","https://images-na.ssl-images-amazon.com/images/I/51UU0FLH1wL._SX330_BO1,204,203,200_.jpg%22,%22","https://m.media-amazon.com/images/I/41LHCOh0eBL.jpg"]
 var booktitle;
 var wpm;
 var index = -1;
+var totalminutes;
 
 function inform(){
     booktitle = document.getElementById("bookInput").value;
@@ -15,16 +16,22 @@ function inform(){
     }
     if(index == -1){
         alert('There is no book with that title');
+        return;
     }
 
-    var totalminutes = parseInt(wordcount[index]/wpm);
+    document.getElementById("cover").src = cover[i];
+
+
+    totalminutes = parseInt(wordcount[index]/wpm);
     var hours;
     var minutes;
     if(totalminutes >=60){
+        minutes = parseInt(totalminutes%60);
         hours = parseInt(totalminutes/60);
-        minutes = totalminutes - (totalminutes - hours);
         alert(booktitles[index] + ' will take you ' + hours + ' hour(s) and ' + minutes + ' minute(s) to read because of your average of ' + wpm + ' wpm');
-    }else{
+    }
+    else{
         alert(booktitles[index] + ' will take you ' + minutes + ' minute(s) to read because of your average of ' + wpm + ' wpm')
     }
 }
+
