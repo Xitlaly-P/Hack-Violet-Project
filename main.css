@@ -13,3 +13,21 @@ body {
     transform: translate(-50%, -50%);
     padding: 2%;
 }
+.leftside{
+  width:30%;
+  float: left;
+}
+.rightside{
+  width: 60%;
+  float:right;
+  padding-left: 10px;
+}
+
+input[type="text"] {
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 1px;
+}
