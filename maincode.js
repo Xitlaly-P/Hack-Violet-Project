@@ -9,6 +9,8 @@ var totalminutes;
 function inform(){
     booktitle = document.getElementById("bookInput").value;
     wpm = document.getElementById("wpmInput").value;
+    var each = document.getElementById("amount").value;
+    var choice = document.getElementById("time").value;
 
     for (i = 0; i < booktitles.length; i++) {
         if(booktitle == booktitles[i])
@@ -21,17 +23,23 @@ function inform(){
 
     document.getElementById("cover").src = cover[i];
 
-
-    totalminutes = parseInt(wordcount[index]/wpm);
     var hours;
     var minutes;
+    totalminutes = parseInt(wordcount[index]/wpm);
+    each = parseInt(totalminutes/each);
     if(totalminutes >=60){
         minutes = parseInt(totalminutes%60);
         hours = parseInt(totalminutes/60);
+
         alert(booktitles[index] + ' will take you ' + hours + ' hour(s) and ' + minutes + ' minute(s) to read because of your average of ' + wpm + ' wpm');
+        minutes = parseInt(each%60);
+        hours = parseInt(each/60);
+        alert( each + "You should read " + hours + " hour(s) and " + minutes + " minutes a " + choice);
     }
     else{
-        alert(booktitles[index] + ' will take you ' + minutes + ' minute(s) to read because of your average of ' + wpm + ' wpm')
+        alert(booktitles[index] + ' will take you ' + minutes + ' minute(s) to read because of your average of ' + wpm + ' wpm');
+        minutes = parseInt(each/totalminutes);
+        alert("You should read " + minutes + " minutes a " + choice);
     }
-}
 
+}
