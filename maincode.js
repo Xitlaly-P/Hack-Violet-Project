@@ -1,6 +1,6 @@
-var booktitles=["Sorcery of Thorns", "Aurora Rising", "Illuminae", "The Maze Runner", "Red Queen"]
-var wordcount=[121424, 139077, 174950, 92520, 116656]
-var cover=["https://m.media-amazon.com/images/I/51geWHDf9JL.jpg", "https://images-na.ssl-images-amazon.com/images/I/81DOo37t7UL.jpg","https://img.chirpbooks.com/image","https://images-na.ssl-images-amazon.com/images/I/51UU0FLH1wL._SX330_BO1,204,203,200_.jpg%22,%22","https://m.media-amazon.com/images/I/41LHCOh0eBL.jpg"]
+var booktitles=["Sorcery of Thorns", "Aurora Rising", "Illuminae", "The Maze Runner", "Red Queen", "Warcross", "One of Us is Next", "Siege and Storm", "Shadow and Bone"]
+var wordcount=[121424, 139077, 174950, 92520, 116656, 116656, 77909, 122360, 116656]
+var cover=["https://m.media-amazon.com/images/I/51geWHDf9JL.jpg", "https://images-na.ssl-images-amazon.com/images/I/81DOo37t7UL.jpg","https://img.chirpbooks.com/image","https://images-na.ssl-images-amazon.com/images/I/51UU0FLH1wL._SX330_BO1,204,203,200_.jpg%22,%22","https://m.media-amazon.com/images/I/41LHCOh0eBL.jpg", "https://m.media-amazon.com/images/I/51OGiERPBNL.jpg", "https://images-na.ssl-images-amazon.com/images/I/91rcy5PyYEL.jpg", "https://m.media-amazon.com/images/I/51REmIxkvRL.jpg", "https://m.media-amazon.com/images/I/51KISLCE4nL.jpg"]
 var booktitle;
 var wpm;
 var index = -1;
@@ -13,7 +13,7 @@ function inform(){
     var choice = document.getElementById("time").value;
 
     for (i = 0; i < booktitles.length; i++) {
-        if(booktitle == booktitles[i])
+        if(booktitle.toLowerCase() == booktitles[i].toLowerCase())
             index = i;
     }
     if(index == -1){
@@ -34,7 +34,7 @@ function inform(){
         alert(booktitles[index] + ' will take you ' + hours + ' hour(s) and ' + minutes + ' minute(s) to read because of your average of ' + wpm + ' wpm');
         minutes = parseInt(each%60);
         hours = parseInt(each/60);
-        alert( each + "You should read " + hours + " hour(s) and " + minutes + " minutes a " + choice);
+        alert("You should read " + hours + " hour(s) and " + minutes + " minutes a " + choice);
     }
     else{
         alert(booktitles[index] + ' will take you ' + minutes + ' minute(s) to read because of your average of ' + wpm + ' wpm');
